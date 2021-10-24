@@ -1,0 +1,37 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  margin: 0;
+  background: #1d2020;
+  z-index: 99;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.nav-right {
+  margin-right: 20px;
+}
+.flash-logo {
+  margin-left: 16px;
+  height: 40px;
+}
+.flash-logo-text {
+  font-family: "Bangers", cursive;
+  font-size: 40px;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  color: #e7e6e7;
+}
+.nav-ab-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  color: #e7e6e7;
+  text-decoration: none;
+}
+.nav-ab-link:hover {
+  text-decoration: wavy underline;
+}
