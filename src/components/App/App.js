@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import "./App.css";
 import Nav from "../Nav/Nav";
+import Landing from "../Landing/Landing";
 class App extends React.Component{
     render(){
         return(
@@ -9,7 +10,7 @@ class App extends React.Component{
                 {/* Nav section */}
                 <Nav />
                 {/* Landing page */}
-
+                <Landing/>
                 {/* Challenege section */}
 
                 {/* Footer */}
