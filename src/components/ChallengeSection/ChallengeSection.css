@@ -1,0 +1,14 @@
+.challenge-section-container {
+  min-width: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px auto;
+}
+.challenge-section-header {
+  color: #fbf6fb;
+  font-family: "Bangers", cursive;
+  text-align: center;
+  font-size: 64px;
+  letter-spacing: 4px;
+}

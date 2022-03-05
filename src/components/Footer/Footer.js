@@ -8,6 +8,7 @@ const Footer = () => {
                 className="footer-text"
                 target="_blank"
                 href="https://www.linkedin.com/in/anand-baraik/"
+                rel="noreferrer"
             >
                 Designed & Developed By <span className="author">Anand Baraik</span>
             </a>
