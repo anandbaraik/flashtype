@@ -1,0 +1,16 @@
+.test-container {
+  background-color: #fff;
+  margin: 64px 0px;
+  width: 80%;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+.try-again {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
