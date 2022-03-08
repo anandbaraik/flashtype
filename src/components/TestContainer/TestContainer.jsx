@@ -5,7 +5,7 @@ import TypingChallengeContainer from '../TypingChallengeContainer/TypingChalleng
 export default function TestContainer({words, charecters, wpm}) {
   return (
     <div className="test-container">
-    <div>
+    <div className="typing-challenge">
       <TypingChallengeContainer words={words} charecters={charecters} wpm={wpm}>
       </TypingChallengeContainer>
     </div>
