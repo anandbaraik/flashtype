@@ -6,27 +6,27 @@ export default function TypingChallengeContainer({words, charecters, wpm}) {
         {/* details card */}
         <div className="details-container">
             <div className="details-card">
-                <div className="card-name">
-                    words
-                </div>
                 <div className="card-value">
                     {words}
                 </div>
+                <div className="card-name">
+                    Words
+                </div>
             </div>
             <div className="details-card">
-                <div className="card-name">
-                    charecters
-                </div>
                 <div className="card-value">
                     {charecters}
                 </div>
+                <div className="card-name">
+                    Charecters
+                </div>
             </div>
             <div className="details-card">
-                <div className="card-name">
-                    wpm
-                </div>
                 <div className="card-value">
                     {wpm}
+                </div>
+                <div className="card-name">
+                    Wpm
                 </div>
             </div>
         </div>
