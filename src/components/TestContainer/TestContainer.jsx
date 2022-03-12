@@ -2,19 +2,36 @@ import React from 'react'
 import './TestContainer.css'
 import TryAgain from '../TryAgain/TryAgain';
 import TypingChallengeContainer from '../TypingChallengeContainer/TypingChallengeContainer';
-export default function TestContainer({words, charecters, wpm}) {
+export default function TestContainer({
+  selectedParagraph,
+  timerStarted,
+  timeRemaining,
+  words,
+  charecters,
+  wpm
+}) {
   const remainingTime = 30;
   return (
     <div className="test-container">
     {
       (remainingTime > 0) ? (
         <div className="typing-challenge">
-          <TypingChallengeContainer words={words} charecters={charecters} wpm={wpm}>
-          </TypingChallengeContainer>
+          <TypingChallengeContainer
+            selectedParagraph={selectedParagraph}
+            timerStarted={timerStarted}
+            timeRemaining={timeRemaining}
+            words={words}
+            charecters={charecters}
+            wpm={wpm}
+          />
         </div>
       ): (
         <div className="try-again">
-          <TryAgain words={words} charecters={charecters} wpm={wpm}></TryAgain>
+          <TryAgain 
+            words={words}
+            charecters={charecters}
+            wpm={wpm}
+            />
         </div>
       )
     }
