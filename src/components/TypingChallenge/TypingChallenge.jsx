@@ -3,8 +3,10 @@ import "./TypingChallenge.css"
 export default function TypingChallenge({
     selectedParagraph,
     timerStarted,
-    timeRemaining
+    timeRemaining,
+    testInfo
 }) {
+    // console.log(testInfo);
   return (
     <div className="typeing-challenge">
         <div className="timer-container">

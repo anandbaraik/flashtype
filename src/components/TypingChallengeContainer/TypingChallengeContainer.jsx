@@ -7,7 +7,8 @@ export default function TypingChallengeContainer({
     timeRemaining,
     words,
     charecters,
-    wpm
+    wpm,
+    testInfo
 }) {
   return (
     <div data-aos="fade-up" className="typing-challenge-container">
@@ -43,6 +44,7 @@ export default function TypingChallengeContainer({
             selectedParagraph={selectedParagraph}
             timerStarted={timerStarted}
             timeRemaining={timeRemaining}
+            testInfo={testInfo}
         />
     </div>
   )

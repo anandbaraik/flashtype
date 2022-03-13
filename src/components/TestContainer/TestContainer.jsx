@@ -8,7 +8,8 @@ export default function TestContainer({
   timeRemaining,
   words,
   charecters,
-  wpm
+  wpm,
+  testInfo
 }) {
   const remainingTime = 30;
   return (
@@ -23,6 +24,7 @@ export default function TestContainer({
             words={words}
             charecters={charecters}
             wpm={wpm}
+            testInfo={testInfo}
           />
         </div>
       ): (

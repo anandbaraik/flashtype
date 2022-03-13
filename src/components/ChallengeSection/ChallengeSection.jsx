@@ -7,7 +7,8 @@ const ChallengeSection = ({
     timeRemaining,
     words,
     charecters,
-    wpm
+    wpm,
+    testInfo
 }) => {
     return(
         <div className="challenge-section-container">
@@ -21,6 +22,7 @@ const ChallengeSection = ({
                 words={words}
                 charecters={charecters}
                 wpm={wpm}
+                testInfo={testInfo}
             />
         </div>
     );
