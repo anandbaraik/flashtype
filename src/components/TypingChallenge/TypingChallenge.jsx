@@ -1,12 +1,12 @@
 import React from 'react'
 import "./TypingChallenge.css"
+import TestLetter from '../TestLetter/TestLetter.jsx'
 export default function TypingChallenge({
     selectedParagraph,
     timerStarted,
     timeRemaining,
     testInfo
 }) {
-    // console.log(testInfo);
   return (
     <div className="typeing-challenge">
         <div className="timer-container">
@@ -24,7 +24,13 @@ export default function TypingChallenge({
         <div className="textarea-container">
             <div className="textarea-left">
                 <div className="textarea test-paragraph">
-                    {selectedParagraph}
+                    {
+                        testInfo.map((individualLetterInfo, index) => {
+                            return <TestLetter individualLetterInfo={individualLetterInfo}
+                                key={index}
+                            />
+                        })
+                    }
                 </div>
             </div>
             <div className="textarea-right">

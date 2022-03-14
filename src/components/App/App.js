@@ -18,18 +18,18 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        // fetch(serviceUrl)
-        //     .then((response) => response.text())
-        //     .then((data) => {
-        //         const selectedParagraphArray = data.split("");
-        //         const testInfo = selectedParagraphArray.map(selectedLetter => {
-        //             return {
-        //                 testLetter : selectedLetter,
-        //                 status : "notAttempted"
-        //             }
-        //         });
-        //         this.setState({testInfo});
-        //     });
+        fetch(serviceUrl)
+            .then((response) => response.text())
+            .then((data) => {
+                const selectedParagraphArray = data.split("");
+                const testInfo = selectedParagraphArray.map(selectedLetter => {
+                    return {
+                        testLetter : selectedLetter,
+                        status : "notAttempted"
+                    }
+                });
+                this.setState({testInfo});
+            });
     }
 
     render(){
