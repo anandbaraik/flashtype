@@ -2,10 +2,10 @@ import React from 'react'
 import "./TypingChallenge.css"
 import TestLetter from '../TestLetter/TestLetter.jsx'
 export default function TypingChallenge({
-    selectedParagraph,
     timerStarted,
     timeRemaining,
-    testInfo
+    testInfo,
+    onInputChange
 }) {
   return (
     <div className="typeing-challenge">
@@ -35,7 +35,8 @@ export default function TypingChallenge({
             </div>
             <div className="textarea-right">
                 <textarea className="textarea"
-                placeholder="Start typing here"></textarea>
+                placeholder="Start typing here"
+                onChange={(e) => onInputChange(e.target.value)}></textarea>
             </div>
         </div>
     </div>

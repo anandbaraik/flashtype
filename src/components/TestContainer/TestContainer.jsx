@@ -3,13 +3,13 @@ import './TestContainer.css'
 import TryAgain from '../TryAgain/TryAgain';
 import TypingChallengeContainer from '../TypingChallengeContainer/TypingChallengeContainer';
 export default function TestContainer({
-  selectedParagraph,
   timerStarted,
   timeRemaining,
   words,
   charecters,
   wpm,
-  testInfo
+  testInfo,
+  onInputChange
 }) {
   const remainingTime = 30;
   return (
@@ -18,13 +18,13 @@ export default function TestContainer({
       (remainingTime > 0) ? (
         <div className="typing-challenge">
           <TypingChallengeContainer
-            selectedParagraph={selectedParagraph}
             timerStarted={timerStarted}
             timeRemaining={timeRemaining}
             words={words}
             charecters={charecters}
             wpm={wpm}
             testInfo={testInfo}
+            onInputChange={onInputChange}
           />
         </div>
       ): (

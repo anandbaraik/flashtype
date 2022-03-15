@@ -2,13 +2,13 @@ import React from 'react'
 import "./TypingChallengeContainer.css";
 import TypingChallenge from '../TypingChallenge/TypingChallenge';
 export default function TypingChallengeContainer({
-    selectedParagraph,
     timerStarted,
     timeRemaining,
     words,
     charecters,
     wpm,
-    testInfo
+    testInfo,
+    onInputChange
 }) {
   return (
     <div data-aos="fade-up" className="typing-challenge-container">
@@ -41,10 +41,10 @@ export default function TypingChallengeContainer({
         </div>
         {/* challenege card */}
         <TypingChallenge 
-            selectedParagraph={selectedParagraph}
             timerStarted={timerStarted}
             timeRemaining={timeRemaining}
             testInfo={testInfo}
+            onInputChange={onInputChange}
         />
     </div>
   )
