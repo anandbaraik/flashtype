@@ -33,12 +33,14 @@ class App extends React.Component {
 
   startTimer = () => {
     this.setState({timerStarted:true});
-    
       const timer = setInterval(() => {
         if(this.state.timeRemaining > 0) {
+          const timeSpent = __totalTime - this.state.timeRemaining;
+          const wpm = timeSpent > 0 ? (this.state.words / timeSpent) * __totalTime : 0;
           this.setState({
-            timeRemaining: this.state.timeRemaining - 1
-          })
+            timeRemaining: this.state.timeRemaining - 1,
+            wpm: parseInt(wpm)
+          });
         } else {
           clearInterval(timer);
         }
