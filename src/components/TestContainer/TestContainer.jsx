@@ -11,11 +11,10 @@ export default function TestContainer({
   testInfo,
   onInputChange
 }) {
-  const remainingTime = 30;
   return (
     <div className="test-container">
     {
-      (remainingTime > 0) ? (
+      (timeRemaining > 0) ? (
         <div className="typing-challenge">
           <TypingChallengeContainer
             timerStarted={timerStarted}
