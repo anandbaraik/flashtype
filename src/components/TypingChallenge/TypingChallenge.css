@@ -61,7 +61,7 @@
   background-color: #e9e7e4;
 }
 /* For mobile phones: */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
   .textarea-container {
     width: 98% !important;
   }
