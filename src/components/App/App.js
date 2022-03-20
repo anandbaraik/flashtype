@@ -49,7 +49,36 @@ class App extends React.Component {
 
   handleInput = (inputValue) => {
     if(!this.state.timerStarted) this.startTimer();
-    console.log(inputValue);
+    /**
+     * 1. Handle the underflow case - all characters should be shown as not-attempted
+     * 2. Handle the overflow case - early exit
+     * 3. Handle the backspace case
+     *      - Mark the [index+1] element as notAttempted
+     *        (irrespective of whether the index is less than zero)
+     *      - But, don't forget to check for the overflow here
+     *        (index + 1 -> out of bound, when index === length-1)
+     * 4. Update the status in test info
+     *      1. Find out the last character in the inputValue and it's index
+     *      2. Check if the character at same index in testInfo (state) matches
+     *      3. Yes -> Correct
+     *         No  -> Incorrect (Mistake++)
+     * 5. Irrespective of the case, characters, words and wpm can be updated
+     */
+    
+    const charecters = inputValue.length;
+    const words = inputValue.split(" ").length;
+    const index = charecters - 1;
+    if(index < 0) {
+      this.setState({
+        testInfo: [{
+          testLetter: this.state.testInfo[0].testLetter,
+          status: "notAttempted",
+        }, ...this.state.testInfo.slice(1)],
+        words,
+        charecters,
+      });
+      return;
+    }
   }
   render() {
     return (
