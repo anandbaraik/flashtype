@@ -50,7 +50,7 @@ class App extends React.Component {
   handleInput = (inputValue) => {
     if(!this.state.timerStarted) this.startTimer();
     /**
-     * 1. Handle the underflow case - all characters should be shown as not-attempted
+     * 1. Handle the underflow case - all characters should be shown as notAttempted
      * 2. Handle the overflow case - early exit
      * 3. Handle the backspace case
      *      - Mark the [index+1] element as notAttempted
@@ -68,17 +68,41 @@ class App extends React.Component {
     const charecters = inputValue.length;
     const words = inputValue.split(" ").length;
     const index = charecters - 1;
+
+    //Under flow case
     if(index < 0) {
+      const testInfo = this.state.testInfo;
+      testInfo.forEach((currentVal, index, arr) => currentVal.status = "notAttempted");
       this.setState({
-        testInfo: [{
-          testLetter: this.state.testInfo[0].testLetter,
-          status: "notAttempted",
-        }, ...this.state.testInfo.slice(1)],
-        words,
+        testInfo,
+        words : 0,
         charecters,
       });
       return;
     }
+    
+    //Overflow case
+    if(index >= this.state.testInfo.length) {
+      this.setState({
+        words,
+        charecters
+      });
+      return
+    }
+
+    const testInfo = this.state.testInfo;
+    //handle backspace case
+    if(!(index === this.state.testInfo.length - 1)) {
+      testInfo[index+1].status = "notAttempted";
+    }
+    //check if user has typed correct word
+    const status = (inputValue[index] === this.state.testInfo[index].testLetter) ? "correct" : "incorrect";
+    testInfo[index].status = status;
+    this.setState({
+      testInfo,
+      words,
+      charecters
+    })
   }
   render() {
     return (
