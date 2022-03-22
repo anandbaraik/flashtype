@@ -9,7 +9,8 @@ export default function TestContainer({
   charecters,
   wpm,
   testInfo,
-  onInputChange
+  onInputChange,
+  startAgain
 }) {
   return (
     <div className="test-container">
@@ -32,6 +33,7 @@ export default function TestContainer({
             words={words}
             charecters={charecters}
             wpm={wpm}
+            startAgain={startAgain}
             />
         </div>
       )
