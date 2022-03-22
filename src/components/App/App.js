@@ -5,7 +5,7 @@ import Landing from "../Landing/Landing";
 import Footer from "../Footer/Footer";
 import ChallengeSection from "../ChallengeSection/ChallengeSection";
 import {SAMPLE_PARAGRAPHS} from '../../data/sampleParagraphs';
-const __totalTime = 5;
+const __totalTime = 60;
 const __defaultState = {
   timerStarted: false,
   timeRemaining: __totalTime,
