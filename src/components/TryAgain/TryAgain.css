@@ -13,6 +13,10 @@
   font-size: 28px;
   margin: 7px;
 }
+.share-btns {
+  display: flex;
+  flex-direction: row;
+}
 .end-btns {
   position: relative;
   margin: 12px;
@@ -21,7 +25,10 @@
   padding: 2px 16px;
   min-width: 64px;
   vertical-align: middle;
+  display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: center;
   color: #fff;
   box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
     0 1px 5px 0 rgb(0 0 0 / 12%);
@@ -45,10 +52,9 @@
 .share-btn:hover {
   background-color: #5d7dc4;
 }
-.tweet-btn {
-  background-color: #1da1f2;
-}
-.tweet-btn:focus,
-.tweet-btn:hover {
-  background-color: #8faef3;
+svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  fill: currentColor;
 }

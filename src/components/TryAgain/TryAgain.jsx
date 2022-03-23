@@ -1,8 +1,20 @@
 import React from 'react'
 import './TryAgain.css';
 export default function TryAgain({words, charecters, wpm, startAgain}) {
+  
   const url = "http://anandbaraik.github.io/flashtype";
-  const stat = `FlashType \n\nCharacters: ${charecters}, \nWords: ${words}, \nSpeeds: ${wpm} wpm \nTry to beat me: ${url} \n#flashType #anandbaraik`;
+  const stat = `FlashType \nCharacters: ${charecters} \nWords: ${words} \nSpeeds: ${wpm} wpm \nTry to beat me: ${url} \n#flashType #anandbaraik`;
+
+  const share = () => {
+    let textarea = document.createElement('textarea');
+    textarea.innerHTML = stat;
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); /* For mobile devices */
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+
   return (
     <div data-aos="fade-up" className="try-again-container">
       <h1>Test Results</h1>
@@ -20,30 +32,17 @@ export default function TryAgain({words, charecters, wpm, startAgain}) {
           {wpm} wpm
         </p>
       </div>
-      <div>
+      <div className='share-btns'>
         <button className="end-btns start-again-btn"
         onClick={() => startAgain()}>
           Retry
         </button>
-        <button className="end-btns share-btn"
-          onClick={() => {
-            window.open(
-              `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-              "facebook-share-dialog",
-              "width=800, height=600"
-            )
-          }}>
+        <button className='end-btns share-btn'
+          onClick={() => share()}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path>
+          </svg>
           Share
-        </button>
-        <button className="end-btns tweet-btn"
-          onClick={() => {
-            window.open(
-              `https://twitter.com/intent/tweet?text=${stat}`,
-              "twitter",
-              "width=800, height=600"
-            )
-          }}>
-          Tweet
         </button>
       </div>
     </div>
