@@ -53,8 +53,47 @@
   background-color: #5d7dc4;
 }
 svg {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.5em;
+  width: 25px;
+  height: 40px;
   fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #5c81dc;
+}
+
+.tooltip .shared-notif {
+  visibility: hidden;
+  width: 165px;
+  background-color: #5c81dc;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .shared-notif::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #5c81dc transparent transparent transparent;
+}
+.fs-25 {
+  font-size: 25px;
+}
+.mr-5 {
+  margin-right: 5px;
 }
