@@ -28,7 +28,16 @@ export default function TryAgain({words, charecters, wpm, startAgain}) {
   },0);
   
   const share = () => {
-    alert('shared');
+    const shareResults = {
+      text: stat
+    }
+
+    try {
+      await navigator.share(shareResults);
+      console.info('shared!');
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   return (
