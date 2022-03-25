@@ -19,13 +19,13 @@ export default function TryAgain({words, charecters, wpm, startAgain}) {
     },2500);
   }
   
-  if (navigator.share) {
-    document.querySelector('.share-btn').style.visibility = 'visible';
-  } else {
-    setTimeout(function(){
-      document.querySelector('.share-btn').style.visibility = 'hidden';
-    },0);
-  }
+  setTimeout(function(){
+    if (navigator.share) {
+      document.querySelector('.share-btn').style.display = 'block';
+    } else {
+      document.querySelector('.share-btn').style.display = 'none';
+    }  
+  },0);
   
   const share = () => {
     alert('shared');
