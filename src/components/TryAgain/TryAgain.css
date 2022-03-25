@@ -52,6 +52,13 @@
 .share-btn:hover {
   background-color: #5d7dc4;
 }
+.copy-btn {
+  background: #1da1f2;
+}
+.copy-btn:focus,
+.copy-btn:hover {
+  background-color: #8faef3;
+}
 svg {
   width: 25px;
   height: 40px;
