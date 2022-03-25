@@ -15,7 +15,7 @@ export default function TryAgain({words, charecters, wpm, startAgain}) {
     document.body.removeChild(textarea);
     document.querySelector('.shared-notif').style.visibility = 'visible';
     setTimeout(function(){
-      document.querySelector('.shared-notif').style.visibility = 'hidden';
+      if(document.querySelector('.shared-notif')) document.querySelector('.shared-notif').style.visibility = 'hidden';
     },2500);
   }
   
