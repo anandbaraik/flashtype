@@ -7,7 +7,7 @@ const Footer = () => {
             <a
                 className="footer-text"
                 target="_blank"
-                href="https://www.linkedin.com/in/anand-baraik/"
+                href="https://peerlist.io/anandbaraik"
                 rel="noreferrer"
             >
                 Designed & Developed By <span className="author">Anand Baraik</span>
